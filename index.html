@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ernesto Bonilla-Hoshikawa</title>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Ernesto Bonilla-Hoshikawa — Computer Engineer" />
+  <meta property="og:description" content="Computer Engineering & CS student at Northeastern University. Embedded systems, FPGAs, robotics, and software." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ernestobh.vercel.app" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ernesto Bonilla-Hoshikawa — Computer Engineer" />
+  <meta name="twitter:description" content="Computer Engineering & CS student at Northeastern University. Embedded systems, FPGAs, robotics, and software." />
+  <meta name="description" content="Portfolio of Ernesto Bonilla-Hoshikawa — Computer Engineering & Computer Science student at Northeastern University specializing in embedded systems, FPGA development, and robotics." />
+
+  <!-- Favicon (inline SVG — your initials) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d0d0d'/><text x='50' y='68' font-family='Georgia,serif' font-size='48' font-weight='bold' fill='%23fafafa' text-anchor='middle'>E</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -126,6 +140,16 @@
     /* ─── HERO ─── */
     .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 5rem; }
     .hero-inner { width: 100%; }
+    .portrait {
+      display: block;
+      width: min(240px, 48vw);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--gray-6);
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
 
     .hero-eyebrow {
       font-size: 0.78rem;
@@ -191,6 +215,11 @@
     }
 
     .hero-link--subtle:hover { color: var(--black); border-bottom-color: var(--black); opacity: 1; }
+
+    .hero-link--resume {
+      color: var(--black);
+      border-bottom: 1px solid var(--black);
+    }
 
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -261,6 +290,23 @@
     .project-desc { font-size: 0.9rem; color: var(--gray-3); line-height: 1.75; font-weight: 300; max-width: 620px; margin-bottom: 1rem; }
     .project-stack { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
+    .project-image-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 0.75rem 0 1rem;
+      border: 1px solid var(--gray-6);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .project-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .project-stack span {
       font-size: 0.72rem;
       font-weight: 500;
@@ -273,6 +319,20 @@
     }
 
     .project-stack span:hover { border-color: var(--black); color: var(--black); }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--gray-4);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border: 1px dashed var(--gray-5);
+      border-radius: 3px;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
 
     /* ─── SKILLS ─── */
     .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -366,11 +426,12 @@
     }
 
     .fade-in-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
-    .fade-in-children.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(2) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
     .fade-in-children.visible > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
-    .fade-in-children.visible > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
-    .fade-in-children.visible > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
-    .fade-in-children.visible > *:nth-child(6) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(4) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(5) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(6) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(7) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
@@ -388,7 +449,7 @@
     }
 
     @media (max-width: 480px) {
-      .nav-links { 
+      .nav-links {
         display: none;
         position: absolute;
         top: 100%;
@@ -409,7 +470,7 @@
 <body>
 
   <nav>
-    <a href="#" class="nav-name">Top</a>
+    <a href="#hero" class="nav-name">Ernesto B-H</a>
     <button class="menu-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -427,11 +488,12 @@
     <section class="hero" id="hero">
       <div class="hero-inner">
         <img src="portrait.jpg" alt="Portrait of Ernesto Bonilla-Hoshikawa" class="portrait" />
-        <p class="hero-eyebrow">Computer Engineer · Boston, MA</p>
+        <p class="hero-eyebrow">Computer Engineer · Boston, MA · U.S. Citizen</p>
         <h1>Ernesto<br/>Bonilla-Hoshikawa</h1>
-        <p class="hero-bio">Computer Engineering & Computer Science at Northeastern University. I work at the intersection of embedded systems, FPGAs, and software — turning logic into things that move, measure, and think.</p>
+        <p class="hero-bio">Computer Engineering and Computer Science student at Northeastern University, specializing in embedded systems, FPGA development, and hardware-software integration.</p>
         <div class="hero-links">
           <a href="mailto:bonillahoshikawa.e@northeastern.edu" class="hero-link">Email me</a>
+          <a href="Ernesto Bonilla-Hoshikawa.pdf" target="_blank" class="hero-link hero-link--resume">Resume ↓</a>
           <a href="https://www.linkedin.com/in/ernesto-bonilla-4353b127b/" target="_blank" rel="noopener" class="hero-link hero-link--subtle">LinkedIn</a>
           <a href="https://github.com/Creator6565" target="_blank" rel="noopener" class="hero-link hero-link--subtle">GitHub</a>
         </div>
@@ -450,9 +512,10 @@
       </div>
       <div class="about-content">
         <div class="about-text">
-          <p>I'm drawn to problems that live between hardware and software. From writing gait logic for a hexapod robot on an FPGA, to designing analog front ends for ECG capture, to building backend APIs — I like understanding systems all the way down.</p>
-          <p>Currently a TA for Logic & Computation at Khoury College and an active member of NU Wireless Club and AI @ Northeastern. I hold two AWS certifications and maintain a 3.97 GPA.</p>
-          <p>I'm seeking a Fall 2026 co-op in embedded systems, robotics, AI, or software engineering.</p>
+          <p>I've been building with computers since middle school, when I programmed an Arduino-powered rover in Python that could follow a black line on its own. From there I kept going, experimenting with electronics, microprocessors, and AI libraries well before university.</p>
+          <p>Since then, I've designed an analog ECG acquisition system, built FPGA-based motor controllers and ultrasonic ranging hardware, and programmed a hexapod spider robot. These started as coursework, but I kept pushing into FPGA programming and PCB design on my own to understand how electronics actually communicate at the lowest level.</p>
+          <p>I'm currently a TA for Logic & Computation at Khoury College and an active member of NU Wireless Club — where I'm exploring SDR and RF fundamentals — and AI @ Northeastern. I hold two AWS certifications and maintain a 3.97 GPA.</p>
+          <p>I'm seeking a Fall 2026 co-op in embedded systems, robotics, or AI robotics applications.</p>
         </div>
         <div class="about-details">
           <div><div class="about-detail-label">University</div><div class="about-detail-value">Northeastern University</div></div>
@@ -460,6 +523,7 @@
           <div><div class="about-detail-label">GPA</div><div class="about-detail-value">3.97</div></div>
           <div><div class="about-detail-label">Honor Society</div><div class="about-detail-value">Tau Beta Pi</div></div>
           <div><div class="about-detail-label">Graduation</div><div class="about-detail-value">May 2028</div></div>
+          <div><div class="about-detail-label">Currently</div><div class="about-detail-value">TA, Logic & Computation</div></div>
         </div>
       </div>
     </section>
@@ -493,7 +557,7 @@
 
   <div class="divider"></div>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS (reordered: FPGA/hardware-first for target companies) -->
   <div class="container">
     <section id="projects" class="fade-in">
       <div class="section-header">
@@ -501,46 +565,73 @@
         <span class="section-number">03</span>
       </div>
       <div class="fade-in-children">
-        <div class="project-item">
-          <div class="project-top">
-            <div class="project-name">Programmable Spider Robot</div>
-            <div class="project-type">Embedded · Robotics</div>
-          </div>
-          <div class="project-desc">Gait-control logic in C++ using OOP to manage hexapod movement on a DE1-Nano FPGA. Diagnosed startup timing failures to enable consistent robot operation.</div>
-          <div class="project-stack"><span>C++</span><span>Embedded Linux</span><span>Cyclone V FPGA</span></div>
-        </div>
-        <div class="project-item">
-          <div class="project-top">
-            <div class="project-name">Custom ECG System</div>
-            <div class="project-type">Biomedical · Signals</div>
-          </div>
-          <div class="project-desc">Analog front end with AD627 amplifier at ~775 gain. Hardware bandpass and digital notch filters captured 70 BPM heart rate data, analyzed in MATLAB.</div>
-          <div class="project-stack"><span>LTspice</span><span>NI USB-DAQ</span><span>MATLAB</span></div>
-        </div>
+
         <div class="project-item">
           <div class="project-top">
             <div class="project-name">FPGA Motor Control</div>
             <div class="project-type">FPGA · Controls</div>
           </div>
-          <div class="project-desc">PWM generation for RC servos and DC motors. FSM-based stepper control with parameterized step rates. Linux user-space controller via mmap and AXI bus.</div>
+          <div class="project-image-container">
+            <img src="motorcontrol.png" alt="Quartus Prime schematic showing PWM generation datapath with counter, mux, multiplier, comparator, and HEX display modules" />
+          </div>
+          <div class="project-desc">Implemented PWM generation for RC servos (50 MHz clock, 20 ms period) and DC motors. Developed FSM-based stepper-motor control with parameterized step rates. Built a Linux user-space controller using mmap and the AXI bus to write memory-mapped registers. Bridging the gap between Linux software and bare-metal FPGA hardware in real time was what made this project click for me.</div>
           <div class="project-stack"><span>Quartus Prime</span><span>Cyclone V</span><span>mmap</span><span>AXI</span></div>
         </div>
+
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-name">Analog ECG Signal Acquisition System</div>
+            <div class="project-type">Biomedical · Signals</div>
+          </div>
+          <div class="project-image-container">
+            <img src="FinalECG.png" alt="ECG waveform captured at 70 BPM from custom analog front end" />
+          </div>
+          <div class="project-desc">Designed an analog front end using an AD627 amplifier with ~775 gain. Implemented hardware bandpass filters (0.1–250 Hz) and digital notch filters to isolate the cardiac signal from noise. Captured clean 70 BPM heart rate data analyzed in MATLAB. Getting the gain and filtering right to pull a clean heartbeat out of millivolt-level signals was the defining challenge.</div>
+          <div class="project-stack"><span>LTspice</span><span>NI USB-DAQ</span><span>MATLAB</span></div>
+        </div>
+
         <div class="project-item">
           <div class="project-top">
             <div class="project-name">Ultrasonic Ranging System</div>
             <div class="project-type">FPGA · RTL</div>
           </div>
-          <div class="project-desc">Custom hardware driver for HC-SR04 sensor with 20ns precision using a 50 MHz clock. Dual-counter timing for trigger cycles and time-of-flight capture, displayed on 7-segment LEDs.</div>
+          <div class="project-image-container">
+            <img src="ultrasonic.png" alt="Cyclone V FPGA board wired to HC-SR04 ultrasonic sensor via breadboard with ADALM2000 for signal analysis" />
+          </div>
+          <div class="project-desc">Designed a custom hardware driver for an HC-SR04 ultrasonic sensor with 20 ns precision using a 50 MHz clock. Built a dual-counter timing system — one for a 100 ms trigger cycle and another to capture time-of-flight data during the echo pulse. Converted raw clock cycles to distance in centimeters and displayed results on triple 7-segment LEDs. Thinking in clock cycles instead of milliseconds completely changed how I approach timing problems.</div>
           <div class="project-stack"><span>Cyclone V</span><span>Quartus</span><span>RTL Design</span></div>
         </div>
+
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-name">Programmable Spider Robot</div>
+            <div class="project-type">Embedded · Robotics</div>
+          </div>
+          <div class="project-desc">Developed gait-control logic in C++ using OOP to manage hexapod movement on a DE1-Nano FPGA. Diagnosed and resolved startup failures caused by timing delays in the initialization sequence. The hardest part was getting six legs to coordinate smoothly — small timing mismatches would cause the robot to stumble or lock up entirely.</div>
+          <div class="project-stack"><span>C++</span><span>Embedded Linux</span><span>Cyclone V FPGA</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-name">KiCad Oscillator Circuit<span class="project-badge">In Progress</span></div>
+            <div class="project-type">PCB · Hardware</div>
+          </div>
+          <div class="project-desc">Designing a Schmitt-trigger oscillator circuit using a 74HC14, with schematic capture and PCB layout in KiCad. Includes a potentiometer-tuned RC timing network, LED indicator output, and proper power decoupling. Building this from schematic through board layout is teaching me the full PCB design workflow from first principles.</div>
+          <div class="project-stack"><span>KiCad</span><span>74HC14</span><span>PCB Layout</span><span>Schematic Capture</span></div>
+        </div>
+
         <div class="project-item">
           <div class="project-top">
             <div class="project-name"><a href="https://github.com/Oasis-NEU/sp25-group-6" target="_blank" rel="noopener">Stand AI — Fact-Checking Tool <span class="arrow">↗</span></a></div>
             <div class="project-type">Full-Stack · AI</div>
           </div>
-          <div class="project-desc">Backend API for an LLM-powered fact-checking tool producing labels, confidence scores, and citations. Owned API architecture and OpenAI API integration.</div>
+          <div class="project-image-container">
+            <img src="StandAI.png" alt="Stand AI fact-checking tool interface" />
+          </div>
+          <div class="project-desc">Built a backend API for an LLM-powered fact-checking tool that produces labels, confidence scores, and citations. Owned full backend development — API architecture, endpoint design, and OpenAI API integration. This was my first time designing an API from scratch, and figuring out how to structure prompts for reliable, parseable LLM output was a challenge I didn't expect.</div>
           <div class="project-stack"><span>Node.js</span><span>Express</span><span>OpenAI API</span></div>
         </div>
+
       </div>
     </section>
   </div>
@@ -561,7 +652,7 @@
           <div class="skill-category"><div class="skill-category-title">Protocols</div><div class="skill-list">I2C, SPI</div></div>
         </div>
         <div>
-          <div class="skill-category"><div class="skill-category-title">Hardware & Test</div><div class="skill-list">ADALM2000, NI USB-DAQ, LTspice, KiCad, Arduino, AD627, Breadboarding</div></div>
+          <div class="skill-category"><div class="skill-category-title">Hardware & Test</div><div class="skill-list">KiCad, ADALM2000, NI USB-DAQ, LTspice, Arduino, AD627, Breadboarding</div></div>
           <div class="skill-category"><div class="skill-category-title">Backend & Cloud</div><div class="skill-list">Node.js, Express, REST APIs, MySQL, Docker, AWS (S3, RDS, Redshift)</div></div>
           <div class="skill-category"><div class="skill-category-title">Tools</div><div class="skill-list">Git, Linux, MATLAB</div></div>
         </div>
@@ -601,7 +692,7 @@
   <div class="container">
     <section id="contact" class="fade-in">
       <div class="contact-inner">
-        <h2 class="contact-heading">Let's work together</h2>
+        <h2 class="contact-heading">Let's connect</h2>
         <p class="contact-sub">Available for Fall 2026 co-op opportunities.</p>
         <div class="contact-row">
           <a href="mailto:bonillahoshikawa.e@northeastern.edu" class="contact-item">bonillahoshikawa.e@northeastern.edu</a>
@@ -618,7 +709,7 @@
   <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
 
   <script>
-    // Scroll-triggered fade-in for sections
+    // Scroll-triggered fade-in
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
